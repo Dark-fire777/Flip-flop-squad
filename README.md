@@ -5,6 +5,7 @@
 **Team:** Flip Flop Squad  
 **Institution:** Indian Institute of Information Technology Dharwad  
 **Team Leader:** Raksha S (25bda092@iiitdwd.ac.in)
+**Team member:** Pranavi (25BCS190@iiitdwd.ac.in)
 
 ---
 
