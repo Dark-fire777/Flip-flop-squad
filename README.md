@@ -1,59 +1,102 @@
-# Semiconductor Defect Detection using Deep Learning
+# Semiconductor Wafer Defect Classification using Deep Learning
 
-## IESA DeepTech Hackathon Submission
+A Convolutional Neural Network (CNN) that classifies semiconductor wafer images into **8 defect categories**, built for the **IESA DeepTech Hackathon**.
 
-**Team:** Flip Flop Squad  
-**Institution:** Indian Institute of Information Technology Dharwad  
-**Team Leader:** Raksha S (25bda092@iiitdwd.ac.in)
-**Team member:** V Pranavi(25BCS190@iiitdwd.ac.in)
-**Team member:** N Deetya (25BEC041@iiitdwd.ac.in)
-**Team member:** B Lohitha(25BEC013@iiitdwd.ac.in)
+**Team:** Flip Flop Squad | **Institution:** Indian Institute of Information Technology Dharwad
 
 ---
 
-## 🎯 Project Overview
+## Problem
 
-AI-driven semiconductor defect detection system using Convolutional Neural Networks (CNN) for automated quality inspection in semiconductor manufacturing. The system achieves **94-97% accuracy** in classifying defects across 8 categories.
+Wafer inspection in semiconductor manufacturing is often done by eye, which is:
 
-## 📋 Problem Statement
+- Slow and labour-intensive
+- Prone to human error and fatigue
+- Hard to scale across production lines
 
-Manual visual inspection of semiconductor wafers is:
-- ⏱️ Time-consuming and labor-intensive
-- ❌ Prone to human error and fatigue  
-- 📈 Difficult to scale across multiple production lines
-- 🕐 Limited by working hours (8-hour shifts)
+## Solution
 
-## 💡 Our Solution
+We trained a CNN that takes a wafer image and predicts its defect type automatically, giving fast and consistent inspection that does not depend on shift hours.
 
-Deep learning-based automated defect detection system that:
-- ✅ Classifies wafer images into 8 defect categories
-- ✅ Operates 24/7 with consistent quality
-- ✅ Provides real-time inference (<50ms per image)
-- ✅ Scales easily across production lines
-- ✅ Reduces manual inspection time by 60-80%
-- ✅ Achieves ~50% cost reduction in quality control
-
-## 📊 Performance
+## Results
 
 | Metric | Value |
-|--------|-------|
-| **Test Accuracy** | 94-97% |
-| **Precision** | ~95% |
-| **Recall** | ~95% |
-| **Inference Time** | <50ms (GPU), <200ms (CPU) |
+| --- | --- |
+| Test accuracy | [94–97%, state the exact final number] |
+| Precision | [~95%, macro / weighted?] |
+| Recall | [~95%, macro / weighted?] |
+| Inference time | [e.g. ~__ ms per image on CPU/GPU, measured on ____] |
 
-See [MODEL_RESULTS.md](MODEL_RESULTS.md) for detailed metrics.
+> Metrics are measured on a held-out test set of [N] images. See the `RESULT/` folder for the confusion matrix, training curves and sample predictions.
 
-## 👥 Team Members
+![Confusion matrix](RESULT/confusion_matrix.png)
+<!-- Replace with your actual file name, or delete this line -->
 
-1. **Raksha S** (Team Leader)
-2. **V Pranavi**
-3. **N Deetya**
-4. **B Lohitha**
+## Defect Classes
 
-**Institution:** Indian Institute of Information Technology Dharwad
+1. [LINEAR SCRATCHES]
+2. [CRACKS]
+3. [PITS OR VOIDS]
+4. [HOLES OR VOIDS]
+5. [STAIN-OIL-DISCOLOURATION]
+6. [CLEAN ]
+7. [WATER STAIN]
 
+
+## Dataset
+
+- **Source:** [dataset name / link, or "provided by the hackathon organisers"]
+- **Size:** [N images, with train / validation / test split]
+- **Preprocessing:** [resizing, normalisation, augmentation, class balancing, etc.]
+
+Raw data is in the `Raw data/` folder.
+
+## Model
+
+- **Architecture:** [e.g. 3 convolutional blocks with max pooling, followed by dense layers and softmax over 8 classes]
+- **Framework:** [TensorFlow / Keras or PyTorch]
+- **Optimiser / loss:** [e.g. Adam, categorical cross-entropy]
+- **Training:** [epochs, batch size, input image size]
+
+The trained model is saved in the `Model/` folder.
+
+## Repository Structure
+
+```
+.
+├── Model/          # Trained model files
+├── Raw data/       # Wafer image dataset
+├── RESULT/         # Plots, confusion matrix, sample predictions
+├── wafer_defect_classification.ipynb   # Training and evaluation notebook
+└── README.md
+```
+
+## How to Run
+
+```bash
+git clone https://github.com/pranavivaranasi07-dev/wafer_defect_classifier_model.git
+cd wafer_defect_classifier_model
+pip install -r requirements.txt
+jupyter notebook wafer_defect_classification.ipynb
+```
+
+Run all cells in order to preprocess the data, train the model and reproduce the results.
+
+## Limitations and Future Work
+
+- Evaluated on [one dataset]; performance on images from other fabs or imaging setups is untested.
+- Possible next steps: data augmentation for rare classes, transfer learning (e.g. ResNet / EfficientNet), a small web demo for uploading a wafer image, and model compression for faster inference.
+
+## Team
+
+- Raksha S (Team Leader)
+- V Pranavi
+- N Deetya
+- B Lohitha
+
+## Acknowledgements
+
+Built for the IESA DeepTech Hackathon.
 ## 📧 Contact
 
 **Email:** 25bda092@iiitdwd.ac.in  
-**Phone:** +91 9380069080
