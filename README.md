@@ -54,7 +54,7 @@ Raw data is in the `Raw data/` folder.
 ## Model
 
 - **Architecture:** [e.g. 3 convolutional blocks with max pooling, followed by dense layers and softmax over 8 classes]
-- **Framework:** [TensorFlow / Keras or PyTorch]
+- **Framework:** [TensorFlow / Keras]
 - **Optimiser / loss:** [e.g. Adam, categorical cross-entropy]
 - **Training:** [epochs, batch size, input image size]
 
